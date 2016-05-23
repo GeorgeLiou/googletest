@@ -66,22 +66,22 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)$(SolutionName)\$(PlatformTarget)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)tmp\$(SolutionName)\$(ProjectName)\$(PlatformTarget)\$(Configuration)\</IntDir>
-    <TargetName>gtest_main</TargetName>
+    <TargetName>$(ProjectName)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)$(SolutionName)\$(PlatformTarget)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)tmp\$(SolutionName)\$(ProjectName)\$(PlatformTarget)\$(Configuration)\</IntDir>
-    <TargetName>gtest_main</TargetName>
+    <TargetName>$(ProjectName)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)$(SolutionName)\$(PlatformTarget)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)tmp\$(SolutionName)\$(ProjectName)\$(PlatformTarget)\$(Configuration)\</IntDir>
-    <TargetName>gtest_main</TargetName>
+    <TargetName>$(ProjectName)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)$(SolutionName)\$(PlatformTarget)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)tmp\$(SolutionName)\$(ProjectName)\$(PlatformTarget)\$(Configuration)\</IntDir>
-    <TargetName>gtest_main</TargetName>
+    <TargetName>$(ProjectName)</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -99,6 +99,9 @@
     <Lib>
       <OutputFile>$(OutDir)$(TargetFileName)</OutputFile>
     </Lib>
+    <PostBuildEvent>
+      <Command>copy $(OutDir)$(TargetName).* $(OpenLibsDir)gtest\lib_$(PlatformTarget)\</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -116,6 +119,9 @@
     <Lib>
       <OutputFile>$(OutDir)$(TargetFileName)</OutputFile>
     </Lib>
+    <PostBuildEvent>
+      <Command>copy $(OutDir)$(TargetName).* $(OpenLibsDir)gtest\lib_$(PlatformTarget)\</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -130,6 +136,9 @@
     <Lib>
       <OutputFile>$(OutDir)$(TargetFileName)</OutputFile>
     </Lib>
+    <PostBuildEvent>
+      <Command>copy $(OutDir)$(TargetName).* $(OpenLibsDir)gtest\lib_$(PlatformTarget)\</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -145,6 +154,9 @@
     <Lib>
       <OutputFile>$(OutDir)$(TargetFileName)</OutputFile>
     </Lib>
+    <PostBuildEvent>
+      <Command>copy $(OutDir)$(TargetName).* $(OpenLibsDir)gtest\lib_$(PlatformTarget)\</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\src\gtest_main.cc">
