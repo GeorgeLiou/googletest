@@ -1,0 +1,20 @@
+! The Layout of gtest and gtest-md
+
+!! Macros
+$(SolutionDir) is where the sln files lay in. The default path is msvc subfolder in googletest.
+$(SolutionName) is the filename of sln files, which is from gtest.sln and gtest-md.sln, and so are the name of "gtest" and "gtest-md" respecitvly.
+$()
+
+$(SolutionDir)
+ \- $(SolutionName)
+     |- $(ProjectName)
+     |   \- $(PlatformTarget)
+     |       \- $(Configuration)
+     |           \- Here is the result of compile
+     |
+     \- $(tmp) This is the intermediate directory for building.
+         \- $(ProjectName)
+             \- $(PlatformTarget)
+                 \- $(Configuration)
+                     \- Here is the result of compile
+

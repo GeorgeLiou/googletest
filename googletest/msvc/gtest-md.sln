@@ -10,6 +10,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gtest_prod_test-md", "gtest
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gtest_unittest-md", "gtest_unittest-md.vcxproj", "{4D9FDFB5-986A-4139-823C-F4EE0ED481A2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B7348B5D-3831-4829-98CF-2360B38F2827}"
+	ProjectSection(SolutionItems) = preProject
+		Layout.txt = Layout.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
