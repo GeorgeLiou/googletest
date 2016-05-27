@@ -87,12 +87,12 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <MinimalRebuild>true</MinimalRebuild>
+      <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeader />
       <WarningLevel>Level3</WarningLevel>
-      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <DisableSpecificWarnings>4819</DisableSpecificWarnings>
       <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
     </ClCompile>
@@ -100,7 +100,7 @@
       <OutputFile>$(OutDir)$(TargetFileName)</OutputFile>
     </Lib>
     <PostBuildEvent>
-      <Command>copy $(OutDir)$(TargetName).* $(OpenLibsDir)gtest\lib_$(PlatformTarget)\</Command>
+      <Command>xcopy /Y /E $(OutDir)$(TargetName).* $(OpenLibsDir)gtest\lib_$(PlatformTarget)\$(Configuration)\</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -120,7 +120,7 @@
       <OutputFile>$(OutDir)$(TargetFileName)</OutputFile>
     </Lib>
     <PostBuildEvent>
-      <Command>copy $(OutDir)$(TargetName).* $(OpenLibsDir)gtest\lib_$(PlatformTarget)\</Command>
+      <Command>xcopy /Y /E $(OutDir)$(TargetName).* $(OpenLibsDir)gtest\lib_$(PlatformTarget)\$(Configuration)\</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -137,7 +137,7 @@
       <OutputFile>$(OutDir)$(TargetFileName)</OutputFile>
     </Lib>
     <PostBuildEvent>
-      <Command>copy $(OutDir)$(TargetName).* $(OpenLibsDir)gtest\lib_$(PlatformTarget)\</Command>
+      <Command>xcopy /Y /E $(OutDir)$(TargetName).* $(OpenLibsDir)gtest\lib_$(PlatformTarget)\$(Configuration)\</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -155,7 +155,7 @@
       <OutputFile>$(OutDir)$(TargetFileName)</OutputFile>
     </Lib>
     <PostBuildEvent>
-      <Command>copy $(OutDir)$(TargetName).* $(OpenLibsDir)gtest\lib_$(PlatformTarget)\</Command>
+      <Command>xcopy /Y /E $(OutDir)$(TargetName).* $(OpenLibsDir)gtest\lib_$(PlatformTarget)\$(Configuration)\</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
